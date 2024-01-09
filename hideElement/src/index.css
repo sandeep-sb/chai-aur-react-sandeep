@@ -1,0 +1,33 @@
+button{
+    background-color: #747bff;
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    border-style: none;
+    text-align: center;
+    margin-top: 100px;
+}
+
+button:hover{
+    background-color: #585db8;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    /* visibility: hidden; */
+    height: 300px;
+    width: 300px;
+    color: white;
+    background-color: #5c5c5c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
