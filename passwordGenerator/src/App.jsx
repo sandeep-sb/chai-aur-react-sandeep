@@ -27,7 +27,7 @@ function App() {
 
   // useCallback Hook
   const copyPasswordToClipboard = useCallback(()=>{
-    passwordRef.current?.selection();
+    passwordRef.current?.select();
     passwordRef.current?.setSelectionRange(0, 999);
     window.navigator.clipboard.writeText(password);
     document.getElementById("acknwlgmntText").style.visibility = "visible";
@@ -51,6 +51,7 @@ function App() {
             className="outline-none w-full py-1 px-3"
             placeholder='Password'
             readOnly
+            ref={passwordRef}
             />
           <button
             className='outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0'
