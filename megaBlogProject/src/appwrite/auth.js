@@ -1,4 +1,3 @@
-import { threadId } from "worker_threads";
 import conf from "../conf/conf";
 import { Client, Account, ID } from "appwrite";
 
@@ -37,6 +36,7 @@ export class AuthService{
 
     async getCurrentUser(){
         try {
+            console.log("hi")
             const currentUser = await this.account.get();
             if(currentUser){
                 return currentUser;
