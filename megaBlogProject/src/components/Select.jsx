@@ -9,8 +9,8 @@ const Select = React.forwardRef(({
         const id = useId();
     return(
         <div className="w-full">
-            {label && <label htmlFor={id}></label>}
-            <Select
+            {label && <label htmlFor={id}>{label}</label>}
+            <select
             id={id}
             ref={ref}
             {...props}
@@ -23,7 +23,7 @@ const Select = React.forwardRef(({
                         {option}
                     </option>
                 )}
-            </Select>
+            </select>
         </div>
     );
 })

@@ -15,6 +15,7 @@ function Signup(){
     const signup = async(data) => {
         setError("");
         try {
+            console.log(data);
             const createUserAccount = await authService.createAccount(data);
             if(createUserAccount){
                 // user will login after creating account, in authService itself
@@ -25,6 +26,7 @@ function Signup(){
                 }
             }
         } catch (error) {
+            console.log(error);
             setError(error.message);
         }
     }

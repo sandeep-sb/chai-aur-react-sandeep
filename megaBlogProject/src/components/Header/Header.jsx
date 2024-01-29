@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import {Container, LogoutBtn, Logo} from "../index"
 
 export const Header = () => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const authStatus = useSelector((state) => state.auth.status);
     const navItems = [
         {
@@ -24,13 +24,13 @@ export const Header = () => {
         },
         {
             name: "All Posts",
-            slug: "/allposts",
-            active: !authStatus
+            slug: "/all-posts",
+            active: authStatus
         },
         {
             name: "Add Post",
-            slug: "/addpost",
-            active: !authStatus
+            slug: "/add-post",
+            active: authStatus
         },
     ]
     return(
@@ -38,9 +38,9 @@ export const Header = () => {
             <Container>
                 <nav className='flex'>
                     <div className='mr-4'>
-                        {/* <Link to="/"> */}
+                        <Link to="/">
                             <Logo />
-                        {/* </Link> */}
+                        </Link>
                     </div>
                     <ul className='flex ml-auto'>
                         {navItems.map((item) => 
@@ -48,7 +48,7 @@ export const Header = () => {
                             <li key={item.name}>
                                 <button
                                     className="inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full"
-                                    // onClick={navigate(item.slug)}
+                                    onClick={() => navigate(item.slug)}
                                 >
                                     {item.name}
                                 </button>

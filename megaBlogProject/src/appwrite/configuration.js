@@ -58,6 +58,7 @@ export class Service{
         }
     }
 
+    // return a document by its unique ID (slug)
     async getPost(slug){
         try {
             return await this.databases.getDocument(
@@ -70,6 +71,7 @@ export class Service{
         }
     }
 
+    // returns a list of documents
     async getAllPosts(){
         try {
             return await this.databases.listDocuments(

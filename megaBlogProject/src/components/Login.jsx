@@ -10,15 +10,17 @@ function Login() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const {register, handleSubmit} = useForm();
-    cosnt [error, setError] = useState();
+    const [error, setError] = useState();
 
     const login = async(data) => {
+        console.log(data);
         setError("");
         try {
             const session = await authService.login(data);
             if(session){
                 const userData = await authService.getCurrentUser();
                 if(userData){
+                    console.log(userData);
                     dispatch(authLogin(userData));
                     navigate("/");
                 }
